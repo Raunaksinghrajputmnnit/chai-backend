@@ -3,8 +3,9 @@ import dotenv from "dotenv"
 import connectDB from "./db/index.js";
 import { app } from "./app.js";
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
+console.log("✅ Mongo URI from env:", process.env.MONGODB_URI);
 connectDB()
 .then(()=>{
     app.on("error",(error)=>{
